@@ -1,10 +1,10 @@
 # BlogPosts
-Nextjs with data mutation (CRUD) using Server Actions
+Nextjs with data mutation (create and fetch functions) using optimized external images and server actions
 
 # Tech Stack
 React, Nextjs 15, better-sqlite3, cloudinary
 
-To build locally, it requires a .env.local with cloudinary credentials with the following keys:
+To build locally, it requires a ".env.local" with cloudinary credentials with the following keys:
 
 CLOUDINARY_CLOUD_NAME=*********
 
