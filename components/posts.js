@@ -4,16 +4,32 @@ import { useOptimistic } from 'react';
 import { formatDate } from '@/lib/format';
 import LikeButton from './like-icon';
 import { togglePostLikeStatusFunc } from '@/actions/posts';
+import Image from 'next/image';
 
 // https://console.cloudinary.com/console/c-a5d2862dad603f6cc1d9a8f3ea8b29/media_library/search?q=%7B%22searchByFolders%22%3A%5B%22nextjs-blogposts-mutations%22%5D%7D&view_mode=mosaic
 
+function imageLoader(config) {
+  const urlStart = config.src.split('upload/')[0];
+  const urlEnd = config.src.split('upload/')[1];
+  const transformations = `w_200,q_${config.quality}`;
+  return `${urlStart}upload/${transformations}/${urlEnd}`;
+}
 
 function Post({ post, action }) {
   return (
     <article className="post">
-      {post.image && <div className="post-image">
-        <img src={post.image} alt={post.title} />
-      </div>}
+      {post.image && 
+        <div className="post-image">
+          <Image
+            loader={imageLoader} 
+            src={post.image}
+            alt={post.title}
+            quality={50}
+            width={200}
+            height={120}
+            priority
+            />
+        </div>}
       <div className="post-content">
         <header>
           <div>
