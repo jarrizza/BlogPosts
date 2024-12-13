@@ -1,5 +1,5 @@
 # BlogPosts
-Nextjs with data mutation (create and fetch functions) using optimized external images and server actions
+Nextjs blog post app using App-routing, cloudinary IMAGES, server actions and better-sqlite3 database
 
 # Tech Stack
 React, Nextjs 15, better-sqlite3, cloudinary
